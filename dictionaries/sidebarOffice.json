@@ -1,0 +1,17 @@
+{
+  "title": "Office 문서",
+  "loading": "문서 렌더링 중...",
+  "retry": "다시 시도",
+  "viewMissingFonts": "누락된 글꼴: {count}개. 클릭하여 보기.",
+  "missingFontsTitle": "누락된 글꼴",
+  "missingFontsDescription": "이 미리보기에서는 다음 글꼴을 사용할 수 없습니다. 텍스트와 레이아웃이 원본 문서와 다를 수 있습니다.",
+  "missingFontsCount": "글꼴: {count}개",
+  "closeDetails": "글꼴 세부 정보 닫기",
+  "unavailable": "Office 미리보기를 사용할 수 없습니다. DeepSeek Harness를 실행 중인 컴퓨터에서 문서 미리보기 서비스를 사용하도록 설정하세요.",
+  "invalid": "이 Office 파일은 미리 볼 수 없습니다. 파일이 손상되었거나, 암호로 보호되어 있거나, 확장자가 올바르지 않을 수 있습니다.",
+  "tooLarge": "Office 파일 또는 변환된 PDF가 미리보기 크기 제한을 초과했습니다. 파일 크기를 줄이거나 미리보기 설정을 조정하세요.",
+  "failed": "Office 변환으로 사용할 수 있는 PDF가 생성되지 않았습니다. 파일을 확인한 후 다시 시도하세요.",
+  "timeout": "Office 변환 시간이 초과되었습니다. 다시 시도하세요.",
+  "busy": "Office 미리보기 작업이 많습니다. 잠시 후 다시 시도하세요.",
+  "changed": "읽는 도중 파일이 변경되었습니다. 미리보기를 다시 여세요."
+}

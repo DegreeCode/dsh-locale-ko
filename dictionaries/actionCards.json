@@ -1,0 +1,16 @@
+{
+  "expandBrief": "더 보기",
+  "collapseBrief": "접기",
+  "dismiss": "나중에",
+  "dismissed": "무시됨",
+  "replaced": "교체됨",
+  "unavailable": "이 작업을 사용할 수 없습니다. 플러그인 페이지에서 확인하세요.",
+  "transport": "결과를 확인하지 못했습니다. 다시 연결하고 카드를 확인한 뒤 다시 시도하세요.",
+  "row.title": "작업 카드",
+  "row.preparing": "카드 준비 중",
+  "row.running": "제안 중",
+  "row.ok": "제안됨",
+  "row.error": "표시되지 않음",
+  "row.stopped": "중단됨",
+  "row.inspect": "호출 확인"
+}

@@ -1,0 +1,19 @@
+{
+  "shortcut.noSession": "먼저 세션을 선택하세요",
+  "type.label": "파일",
+  "guide.title": "워크스페이스 파일",
+  "guide.description": "이 세션의 워크스페이스에 있는 파일 탐색",
+  "loading": "읽는 중…",
+  "empty": "빈 디렉터리",
+  "truncated": "항목이 너무 많아 일부만 표시합니다.",
+  "noWorkspace": "이 세션에는 워크스페이스 디렉터리가 없습니다.",
+  "reload": "새로고침",
+  "autoRefresh": "자동 새로고침",
+  "autoRefresh.enable": "자동 새로고침 사용",
+  "autoRefresh.disable": "자동 새로고침 사용 안 함",
+  "entry.other": "파일도 디렉터리도 아니어서 열 수 없습니다.",
+  "error.notFound": "해당 디렉터리가 없습니다. 이동되었거나 삭제되었을 수 있습니다.",
+  "error.outsideWorkspace": "해당 디렉터리는 워크스페이스 밖에 있어 사이드바에서 읽지 않습니다.",
+  "error.notDirectory": "디렉터리가 아닙니다.",
+  "error.unavailable": "읽지 못했습니다: {message}"
+}

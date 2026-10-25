@@ -1,0 +1,6 @@
+{
+  "band": "Claude Code mods",
+  "pressing": "처리 중…",
+  "press.failed": "버튼 동작을 완료하지 못했습니다: {message}",
+  "press.stale": "이 버튼은 이전에 그려진 화면의 것이어서 패널을 새로고침했습니다"
+}

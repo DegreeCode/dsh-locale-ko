@@ -1,0 +1,13 @@
+{
+  "zoomControls": "확대/축소 컨트롤",
+  "zoomMenu": "확대/축소 비율 선택",
+  "zoomOut": "축소",
+  "zoomIn": "확대",
+  "zoomFitWidth": "너비에 맞춤",
+  "zoomValue": "{percent}%",
+  "title": "이미지",
+  "preview": "이미지 미리보기: {name}",
+  "loading": "문서 렌더링 중...",
+  "failed": "이 이미지를 표시할 수 없습니다.",
+  "unsupported": "이미지 미리보기에는 전체 파일 내용이 필요합니다."
+}

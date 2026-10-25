@@ -1,0 +1,9 @@
+{
+  "waiting": "승인 대기 중",
+  "detail.aria": "승인 세부 정보",
+  "escalation": "{toolName} 도구가 권한 상승 실행을 요청했습니다",
+  "reject": "거부",
+  "allow": "허용",
+  "allowOnce": "한 번만 허용",
+  "allowAlways": "항상 허용"
+}

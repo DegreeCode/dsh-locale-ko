@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Weekly drift check against upstream master (Mondays 00:00 UTC / 09:00 KST).
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package:
+    name: Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Dictionaries and client.js are consistent
+        run: npm run check
+      - name: Module syntax
+        run: node --check client.js && node --check index.js
+      - name: Display metadata parses
+        run: for f in locale/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || exit 1; done
+      - name: Packed file list
+        run: npm pack --dry-run
+
+  upstream:
+    name: Upstream ${{ matrix.name }}
+    needs: package
+    runs-on: ubuntu-latest
+    # The pinned base must pass; latest master reports drift without blocking.
+    continue-on-error: ${{ matrix.name == 'master' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: base
+            ref: 22ddee3792402c3e70ec5f86a63c3e3e895a2f60
+          - name: master
+            ref: master
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: pack
+      - uses: actions/checkout@v4
+        with:
+          repository: deepseek-ai/deepseek-harness
+          ref: ${{ matrix.ref }}
+          path: dsh
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Harness dependencies
+        working-directory: dsh
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile --ignore-scripts
+      - name: Compare keys and tokens with upstream English dictionaries
+        working-directory: pack
+        run: ../dsh/node_modules/.bin/tsx scripts/compare-upstream.mts "$GITHUB_WORKSPACE/dsh"
+      - name: Run against the real locale service
+        working-directory: dsh
+        env:
+          DSH_LANGUAGE_PACK_KO: ${{ github.workspace }}/pack
+        run: |
+          cp "$DSH_LANGUAGE_PACK_KO/tests/runtime.client.spec.ts" packages/client/locale/tests/runtime.client.spec.ts
+          npx vitest run packages/client/locale/tests/runtime.client.spec.ts

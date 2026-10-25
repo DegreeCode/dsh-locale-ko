@@ -1,0 +1,19 @@
+{
+  "chip.label": "계획",
+  "preview.title": "계획",
+  "preview.document": "계획 · Markdown",
+  "preview.action": "열기",
+  "preview.open": "사이드바에서 계획 열기",
+  "preview.full": "계획 전체 보기",
+  "preview.openNamed": "계획 열기: {title}",
+  "preview.loading": "계획을 불러오는 중…",
+  "preview.failed": "계획을 불러오지 못했습니다",
+  "preview.invalidAddress": "계획 주소가 올바르지 않습니다",
+  "preview.historyUnavailable": "세션 기록을 사용할 수 없습니다",
+  "preview.notFound": "이 계획을 찾을 수 없습니다",
+  "preview.unavailable": "계획 미리보기를 사용할 수 없습니다",
+  "preview.expired": "이 임시 계획 미리보기가 만료되었습니다. 검토 대기 중인 카드에서 다시 여세요.",
+  "chip.on.aria": "계획 모드가 켜져 있습니다. 누르면 끕니다",
+  "chip.on.title": "계획 모드가 켜져 있습니다 — 클릭하여 끄기 (/plan off)",
+  "chip.exitFailed": "계획 모드를 종료하지 못했습니다"
+}
