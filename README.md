@@ -61,7 +61,7 @@ dsh plugin --profile <프로필> add ./dsh-language-pack-ko-1.0.0.tgz
 npm run build
 
 # 2. 새 Harness 버전과 키·토큰 대조 (누락, 초과, 자리표시자 변경, 번역 안 된 네임스페이스를 보고합니다)
-npx --prefix <dsh 체크아웃> tsx scripts/compare-upstream.mts <dsh 체크아웃>
+<dsh 체크아웃>/node_modules/.bin/tsx --tsconfig <dsh 체크아웃>/tsconfig.base.json scripts/compare-upstream.mts <dsh 체크아웃>
 
 # 3. 실제 locale 서비스에서 동작 확인
 cp tests/runtime.client.spec.ts <dsh 체크아웃>/packages/client/locale/tests/

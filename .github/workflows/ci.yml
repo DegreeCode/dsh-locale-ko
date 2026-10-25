@@ -67,7 +67,8 @@ jobs:
           pnpm install --frozen-lockfile --ignore-scripts
       - name: Compare keys and tokens with upstream English dictionaries
         working-directory: pack
-        run: ../dsh/node_modules/.bin/tsx scripts/compare-upstream.mts "$GITHUB_WORKSPACE/dsh"
+        # The Harness tsconfig maps workspace imports to src, so an unbuilt checkout resolves them.
+        run: ../dsh/node_modules/.bin/tsx --tsconfig ../dsh/tsconfig.base.json scripts/compare-upstream.mts "$GITHUB_WORKSPACE/dsh"
       - name: Run against the real locale service
         working-directory: dsh
         env:

@@ -1,5 +1,6 @@
 // Compare dictionaries/*.json against the English client dictionaries of a DeepSeek Harness checkout.
-// Usage (from this repo): npx --prefix <dsh-checkout> tsx scripts/compare-upstream.mts <dsh-checkout>
+// Usage (from this repo): <dsh-checkout>/node_modules/.bin/tsx --tsconfig <dsh-checkout>/tsconfig.base.json scripts/compare-upstream.mts <dsh-checkout>
+// The Harness tsconfig maps workspace imports to src; without it an unbuilt checkout fails on imports that resolve to lib/.
 // Reports namespaces and keys that are missing, extra, or that change {placeholders}, /commands or snake_case tokens.
 import { execSync } from 'node:child_process'
 import { readFileSync, readdirSync } from 'node:fs'
