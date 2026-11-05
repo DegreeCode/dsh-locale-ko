@@ -39,5 +39,7 @@
   "markdown.footnotes": "각주",
   "markdown.truncatedCharacters": "… {total}자에서 잘림",
   "number.thousand": "{value}K",
-  "number.million": "{value}M"
+  "number.million": "{value}M",
+  "subtitle.expand": "{name} 설명 펼치기",
+  "subtitle.collapse": "{name} 설명 접기"
 }

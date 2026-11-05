@@ -27,6 +27,8 @@ jobs:
           node-version: 24
       - name: Dictionaries and client.js are consistent
         run: npm run check
+      - name: Compatibility validation tests
+        run: npm test
       - name: Module syntax
         run: node --check client.js && node --check index.js
       - name: Display metadata parses

@@ -168,7 +168,7 @@
   "tool.title.getTeamTask": "팀 작업 읽기",
   "tool.title.updateTeamTask": "팀 작업 업데이트",
   "tool.title.listTeamTasks": "팀 작업 목록",
-  "tool.title.waitAgent": "서브에이전트 대기",
+  "tool.title.waitAgent": "서브에이전트 응답 대기",
   "detail.recordedResult": "기록된 결과",
   "detail.empty": "결과 없음",
   "detail.none": "없음",
@@ -253,7 +253,7 @@
   "detail.receipt.closed": "닫힘",
   "detail.receipt.closing": "닫는 중",
   "detail.wait.noProgress": "활성 서브에이전트 없음",
-  "detail.wait.title": "서브에이전트 활동",
+  "detail.wait.title": "대기 결과",
   "detail.wait.timeout": "대기 시간 초과",
   "detail.wait.changed": "변경 감지됨",
   "detail.agent.reply": "에이전트 응답",
@@ -381,5 +381,14 @@
   "detail.schedule.paused": "일시 중지됨",
   "detail.schedule.ended": "종료됨",
   "detail.schedule.custom": "사용자 지정",
-  "tool.title.applyPatch": "패치 적용"
+  "tool.title.applyPatch": "파일 수정",
+  "input.continue": "생성 계속",
+  "header.more": "추가 작업",
+  "tool.title.subagentFork": "서브에이전트 포크",
+  "detail.status.corrupt": "손상됨",
+  "detail.status.unsupported": "지원되지 않음",
+  "detail.status.unavailable": "사용 불가",
+  "detail.field.agentName": "에이전트 이름",
+  "detail.field.agentDescription": "에이전트 작업 설명",
+  "detail.wait.ended": "대기 종료"
 }

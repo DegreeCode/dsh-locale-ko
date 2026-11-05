@@ -193,5 +193,13 @@
   "row.failed": "실패",
   "json.truncated": "… 잘림, 총 {total}자",
   "clock.md": "{m}월 {d}일",
-  "clock.ymd": "{y}년 {m}월 {d}일"
+  "clock.ymd": "{y}년 {m}월 {d}일",
+  "message.stepProcess.done.context": "주입된 컨텍스트",
+  "message.trigger.subagent.completed": "서브에이전트 실행 완료",
+  "message.trigger.subagent.aborted": "서브에이전트 실행 중지",
+  "message.trigger.subagent.error": "서브에이전트 실행 실패",
+  "message.trigger.subagent.maxTokens": "서브에이전트가 토큰 한도에 도달했습니다",
+  "message.trigger.subagent.refusal": "서브에이전트가 작업을 거절했습니다",
+  "message.trigger.subagent.unknown": "서브에이전트 실행이 예기치 않게 종료되었습니다",
+  "message.continuation.requested": "생성 계속 요청됨"
 }

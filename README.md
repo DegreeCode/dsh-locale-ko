@@ -18,15 +18,15 @@ dsh plugin --profile <프로필> add ./dsh-language-pack-ko
 dsh plugin --profile <프로필> add github:DegreeCode/dsh-locale-ko
 
 # 릴리스 압축 파일로 (GitHub Releases에서 받은 .tgz)
-dsh plugin --profile <프로필> add ./dsh-language-pack-ko-1.1.0.tgz
+dsh plugin --profile <프로필> add ./dsh-language-pack-ko-1.1.1.tgz
 ```
 
 앱 안에서는 **설정 → 플러그인 → 설치**에서 로컬 폴더, Git 저장소, tarball 중 하나를 골라 설치할 수 있습니다. 제거는 `dsh plugin --profile <프로필> remove dsh-language-pack-ko`입니다.
 
 ## 번역 범위
 
-- 웹 UI 클라이언트의 75개 네임스페이스, 3,895개 문자열 (공통 어휘, 설정, 대화, 사이드바, 플러그인 관리·마켓, 예약 작업, 권한 등 실험 기능 포함)
-- 기준 버전: deepseek-harness `66491b05e3` (0.2.2-rc.1)
+- 웹 UI 클라이언트의 75개 네임스페이스, 4,007개 문자열 (공통 어휘, 설정, 대화, 사이드바, 플러그인 관리·마켓, 예약 작업, 권한 등 실험 기능 포함)
+- 기준 버전: deepseek-harness `66491b05e3` (0.2.2-rc.1) 및 개발판 `fcc0ad4621`
 
 언어 팩 방식으로는 바꿀 수 없어 영어로 남는 부분이 있습니다.
 
@@ -36,7 +36,7 @@ dsh plugin --profile <프로필> add ./dsh-language-pack-ko-1.1.0.tgz
 
 본체가 나중에 한국어를 직접 포함하면, 이 플러그인은 이미 등록된 언어와 네임스페이스를 건너뛰고 본체 번역을 그대로 둡니다.
 
-새로 추가된 파일 작업, 코드 리뷰·워크트리, 통계, Liveshare 화면도 포함합니다. 이 버전은 0.2.2-rc.1의 키와 호출 인자를 기준으로 하며, 이전 Harness의 폐기된 키는 포함하지 않습니다.
+새로 추가된 파일 작업, 코드 리뷰·워크트리, 통계, Liveshare 화면도 포함합니다. 릴리스와 개발판에서만 사용하는 키를 함께 제공하며, 두 버전 모두에서 제거된 이전 키는 포함하지 않습니다. `compatibility.json`은 두 기준 커밋 사이에만 존재하는 키의 영어 원문을 기록합니다. 검사는 이 목록의 키도 토큰을 검증하고, 새 누락·미등록 초과 키·토큰 변경은 계속 실패로 보고합니다. 웹 검색 주소 안내 한 곳은 `/messages`를 직접 붙이는 릴리스와 `{path}`를 전달하는 개발판에서 모두 쓸 수 있는 공통 문구로 제공하며, 검토한 두 원문과 정확한 번역을 검사합니다.
 
 ## 번역 원칙
 
@@ -53,6 +53,7 @@ dsh plugin --profile <프로필> add ./dsh-language-pack-ko-1.1.0.tgz
 | `client.js` | 브라우저 모듈. `npm run build`가 사전에서 생성합니다. |
 | `index.js`, `cordis.patch.yml` | 호스트 쪽 빈 플러그인과 번들 패치 |
 | `locale/*.json`, `icon.svg` | 플러그인 목록에 표시되는 이름, 설명, 아이콘 |
+| `compatibility.json`, `scripts/compatibility.mjs` | 버전별 유지 키와 공통 문구의 검증 규칙 |
 | `scripts/compare-upstream.mts` | Harness 체크아웃의 영어 사전과 키·토큰을 대조 |
 | `tests/runtime.client.spec.ts` | Harness의 실제 locale 서비스 위에서 플러그인 동작 확인 |
 
@@ -70,12 +71,14 @@ cp tests/runtime.client.spec.ts <dsh 체크아웃>/packages/client/locale/tests/
 cd <dsh 체크아웃> && DSH_LANGUAGE_PACK_KO=<이 레포> npx vitest run packages/client/locale/tests/runtime.client.spec.ts
 ```
 
+`npm test`는 버전별 유지 키를 허용하면서도 새 누락·잘못된 토큰·미검토 문구를 거부하는지 확인합니다.
+
 `npm run check`는 `client.js`가 사전과 일치하는지, 사전에 문자열이 아닌 값이나 보이지 않는 문자가 없는지 확인합니다.
 
 ## CI/CD
 
 - **CI** (`.github/workflows/ci.yml`): push, PR, 주 1회(월요일 09:00 KST) 실행합니다.
-  - `Package`: 사전과 `client.js` 일치 여부, 모듈 문법, 메타데이터, 패키지 파일 목록을 확인합니다.
+  - `Package`: 사전과 `client.js` 일치 여부, 호환성 검사 테스트, 모듈 문법, 메타데이터, 패키지 파일 목록을 확인합니다.
   - `Upstream base`: 기준 커밋 `66491b05e3`의 Harness를 받아 키·토큰 대조와 실제 locale 서비스 테스트를 돌립니다. 실패하면 CI가 실패합니다.
   - `Upstream master`: 같은 검사를 업스트림 최신 `master`에 돌립니다. 업스트림에 새 문자열이 생긴 것을 알려 주는 용도라 실패해도 CI를 막지 않습니다.
 - **CD** (`.github/workflows/release.yml`): `package.json`의 버전과 같은 `v<버전>` 태그를 푸시하면 검사 후 `.tgz`를 만들어 GitHub Release에 첨부합니다. 저장소 시크릿에 `NPM_TOKEN`이 있으면 npm에도 배포합니다.

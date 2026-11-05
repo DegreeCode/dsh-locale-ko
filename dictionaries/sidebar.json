@@ -6,5 +6,7 @@
   "panels.label": "전역 패널",
   "panels.more": "더 보기",
   "version.copied": "버전을 복사했습니다",
-  "navigation.label": "탐색"
+  "navigation.label": "탐색",
+  "panels.unpinTooltip": "왼쪽 사이드바에서 고정 해제",
+  "panels.unpin": "사이드바에서 {name} 고정 해제"
 }

@@ -1,0 +1,219 @@
+{
+  "release": "66491b05e3f05ad35bcdd4f6cd7ed26041d9e3db",
+  "master": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+  "releaseOnly": {
+    "agent-team": {
+      "roster": "Members",
+      "model": "Model",
+      "open": "Open member conversation",
+      "current": "Current chat",
+      "blockedBy": "Blocked by",
+      "writeScopes": "Write scopes",
+      "ready": "Ready",
+      "task.expand": "Show more",
+      "task.collapse": "Show less",
+      "memberStatus.running": "Running",
+      "memberStatus.inactive": "Inactive",
+      "memberStatus.provisioning": "Provisioning",
+      "memberStatus.failed": "Failed"
+    },
+    "conversation": {
+      "placeholder.parentOffline": "Parent session offline; sending is unavailable but you can still stop the run",
+      "detail.field.depth": "Depth",
+      "detail.wait.changed": "Change detected"
+    },
+    "creationRecommendations": {
+      "keep": "Keep",
+      "scope": "You can remove it at any time"
+    },
+    "forgePanel": {
+      "diff.scopeNote.branch": "Compared with {base}, including uncommitted changes"
+    },
+    "job": {
+      "count.live.one": "{count} background job running",
+      "count.live.other": "{count} background jobs running"
+    },
+    "liveshare": {
+      "dialog.capabilities.description": "Choose one tier for this share; the tier expands at save time into the endpoints the plugins declare now, so endpoints they add later stay closed.",
+      "dialog.capabilities.none": "Not open to viewers",
+      "dialog.capabilities.count": "Endpoints open to viewers: {count}",
+      "dialog.capabilities.tier.read": "Read-only",
+      "dialog.capabilities.tier.write": "Writable",
+      "dialog.capabilities.summary.read": "Read-only · {count} endpoints",
+      "dialog.capabilities.summary.write": "Writable · {readable} read-only + {writable} writable",
+      "dialog.capabilities.stale": "The saved selection is not one whole tier; saving again replaces it with the tier you pick.",
+      "dialog.capabilities.noReadable": "No plugin offers a read-only endpoint, so Read-only cannot be chosen.",
+      "dialog.capabilities.noWritable": "No plugin offers a writable endpoint, so Writable cannot be chosen.",
+      "dialog.capabilities.writeHint": "A writable endpoint takes effect only when the shared Session allows writing, and is destructive inside a writable share."
+    },
+    "session-log-download": {
+      "header.more": "More actions"
+    },
+    "settings.webSearch": {
+      "useSearchApi": "Use the new Web Search API",
+      "useSearchApiHint": "Off by default: search runs through DeepSeek Messages. For the new Web Search API's features and pricing, see the ",
+      "apiKey": "API key",
+      "apiKeyHint": "Stored outside the settings file. Leave blank to keep the current key.",
+      "apiKeyUnset": "No key is configured; only conversations using a DeepSeek Account model can search, through the default endpoint.",
+      "searchApiBaseUrl": "Search / Fetch API base URL",
+      "searchApiBaseUrlHint": "Include the API prefix, such as https://api.deepseek.com/v1/tools. The provider appends /search or /fetch. Leave blank to restore the default."
+    },
+    "subagent": {
+      "readonly.body": "The parent session is offline; reopen it to continue sending messages."
+    }
+  },
+  "masterOnly": {
+    "agent-team": {
+      "progress.completed": "{count} completed",
+      "progress.active": "{count} in progress",
+      "progress.pending": "{count} pending",
+      "command.title": "Agent teamwork",
+      "command.running": "Running",
+      "command.done": "Completed",
+      "command.failed": "Failed",
+      "command.failedReason": "Failed: {reason}",
+      "mode.label": "Enable agent teamwork",
+      "mode.infoLabel": "About agent teamwork",
+      "mode.description": "Coordinate work and progress across agents with a shared task board for better results on complex tasks, with correspondingly higher token costs.",
+      "mode.failed": "Could not confirm the agent teamwork setting was saved. Try again: {message}",
+      "disable.title": "Disable agent teamwork?",
+      "disable.description": "Disabling agent teamwork during a conversation stops the use of shared task tools and team coordination instructions.",
+      "disable.warning": "Disabling it may affect cache reuse, increase subsequent token usage and costs, and affect collaboration on the current task.",
+      "disable.cancel": "Cancel",
+      "disable.confirm": "Disable",
+      "disable.close": "Close"
+    },
+    "chat": {
+      "message.stepProcess.done.context": "Injected context",
+      "message.trigger.subagent.completed": "Subagent run completed",
+      "message.trigger.subagent.aborted": "Subagent run stopped",
+      "message.trigger.subagent.error": "Subagent run failed",
+      "message.trigger.subagent.maxTokens": "Subagent reached the token limit",
+      "message.trigger.subagent.refusal": "Subagent declined the task",
+      "message.trigger.subagent.unknown": "Subagent run ended unexpectedly",
+      "message.continuation.requested": "Requested to continue generation"
+    },
+    "common": {
+      "subtitle.expand": "Expand description for {name}",
+      "subtitle.collapse": "Collapse description for {name}"
+    },
+    "conversation": {
+      "input.continue": "Continue generating",
+      "header.more": "More actions",
+      "tool.title.subagentFork": "Fork subagent",
+      "detail.status.corrupt": "Corrupt",
+      "detail.status.unsupported": "Unsupported",
+      "detail.status.unavailable": "Unavailable",
+      "detail.field.agentName": "Agent name",
+      "detail.field.agentDescription": "Agent task description",
+      "detail.wait.ended": "Wait ended"
+    },
+    "cuaPermissions": {
+      "approvalRisks": "Risks",
+      "approvalRiskTitle": "Computer use risks",
+      "approvalRiskNotice": "The agent can access only apps you approve, and can read and control them in the background.\n\nOnline games, messaging apps, and other apps may restrict automation. Violating their rules could result in your account with that app being suspended or banned.\n\nProceed at your own risk. To stop automated control at any time, press Stop in DeepSeek Harness."
+    },
+    "entryCustomization": {
+      "pinTooltip": "Pin to left sidebar",
+      "pin": "Pin {name} to sidebar"
+    },
+    "forgePanel": {
+      "diff.base.aria": "Base branch: {base}",
+      "diff.base.uncommitted": "Including uncommitted changes",
+      "diff.base.search": "Search branches",
+      "diff.base.loading": "Reading branches…",
+      "diff.base.empty": "No matching branches",
+      "diff.base.automatic": "Default",
+      "diff.base.worktree": "Worktree start",
+      "diff.base.remote": "Remote branches",
+      "diff.base.local": "Local branches",
+      "diff.base.note": "Compared with the merge base of HEAD and the selected branch, including uncommitted changes",
+      "diff.baseMissing": "The base branch {base} was not found; it may have been deleted",
+      "diff.baseUnrelated": "{base} shares no history with HEAD",
+      "diff.useAutomaticBase": "Use the default base branch"
+    },
+    "liveshare": {
+      "dialog.ptcSandboxWarning": "Note: LiveShare’s PTC sandbox is not yet complete - a viewer may read or write files outside the shared workspace through run_code. Share only with people you trust.",
+      "dialog.capabilities.global": "Plugin permissions",
+      "dialog.capabilities.global.none": "Deny all",
+      "dialog.capabilities.global.all": "Allow all",
+      "dialog.capabilities.global.custom": "Custom",
+      "dialog.capabilities.tier.all": "All methods",
+      "dialog.capabilities.partial": "Partial",
+      "viewer.pluginUnsupported": "Plugin {plugin} is not available in this share; some features are unavailable.",
+      "viewer.dismiss": "Dismiss"
+    },
+    "open-in-app": {
+      "menu.openIn": "Open in"
+    },
+    "session-log-download": {
+      "dialog.session": "Session: {sessionId}"
+    },
+    "settings": {
+      "desktop.channel.title": "Update channel",
+      "desktop.channel.description": "Stable is suitable for everyday use. Development offers early access to new features but may be unstable.",
+      "desktop.channel.stable": "Stable",
+      "desktop.channel.nightly": "Development",
+      "desktop.channel.unavailable": "Configuration unavailable",
+      "desktop.channel.error": "Could not apply update settings. Open the desktop update indicator for details.",
+      "desktop.channel.readError": "Could not read the update channel. Restart the app.",
+      "desktop.update.configurationFailed": "Could not apply update settings. Open the desktop update indicator for details.",
+      "desktop.channel.result.applied": "Update channel changed",
+      "desktop.channel.result.configuration": "Settings file error; updates are paused",
+      "desktop.channel.details": "View details",
+      "desktop.channel.result.save": "Could not save",
+      "desktop.channel.result.uncertain": "Settings save error",
+      "desktop.channel.result.format": "Could not save: invalid settings file",
+      "desktop.channel.result.permission": "Could not save: permission denied",
+      "desktop.channel.result.apply": "Settings save error",
+      "desktop.update.configuration.read": "Updates paused: cannot read settings file",
+      "desktop.update.configuration.format": "Updates paused: invalid settings file",
+      "desktop.update.configuration.channel": "Updates paused: channel must be nightly or stable",
+      "desktop.update.configuration.cleanup": "Updates paused: cannot discard previous update; restart the app",
+      "desktop.update.downloadSpaceFailed": "Not enough disk space to download the update. Free up space, then retry.",
+      "desktop.update.downloadPermissionFailed": "Cannot write the update files. Check the folder permissions and retry.",
+      "desktop.update.downloadBusyFailed": "An update file is in use. Close the program using it, then retry."
+    },
+    "settings.webSearch": {
+      "searchSection": "Web search provider",
+      "fetchSection": "Web fetch provider",
+      "providerDeepSeek": "DeepSeek Search API",
+      "providerLegacy": "DeepSeek (legacy)",
+      "legacyKeyHint": "Uses the signed-in account on account-model requests; otherwise uses this API key ({ref}), shared with Models by default.",
+      "invalidMaxUses": "Enter a positive integer, or leave blank to use the default.",
+      "providerLocal": "Direct fetch",
+      "providerDeepSeekFetch": "DeepSeek Fetch API",
+      "providerMissing": "{id} (not loaded)",
+      "providerAuto": "Automatic",
+      "providersFailed": "Couldn't load the provider list, so this menu may be incomplete.",
+      "retry": "Retry",
+      "pluginProviderHint": "Configure this provider in its own plugin settings.",
+      "credential": "API key",
+      "apiKeyUnsetApi": "No key is configured."
+    },
+    "sidebar": {
+      "panels.unpinTooltip": "Unpin from left sidebar",
+      "panels.unpin": "Unpin {name} from sidebar"
+    },
+    "subagent": {
+      "section.title": "Subagents",
+      "section.empty": "No subagents",
+      "progress.completed": "{count} completed",
+      "progress.active": "{count} in progress",
+      "progress.inactive": "{count} not running",
+      "progress.external": "{count} external"
+    }
+  },
+  "sharedText": {
+    "settings.webSearch": {
+      "baseUrlHint": {
+        "english": [
+          "Include the API prefix, such as https://api.deepseek.com/anthropic/v1. The provider appends /messages. Leave blank to restore the default.",
+          "Include the API prefix. Leave blank to use the official address. The provider appends {path}."
+        ],
+        "korean": "API 접두사를 포함한 주소를 입력하세요. 비워 두면 공식 주소를 사용합니다. 제공업체가 요청 경로를 자동으로 덧붙입니다.",
+        "reason": "Both providers append their request path. Use shared wording without a literal /messages or an unavailable {path} argument."
+      }
+    }
+  }
+}

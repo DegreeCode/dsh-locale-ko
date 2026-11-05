@@ -174,7 +174,7 @@
   "diff.tooLarge": "변경 사항이 너무 많아 여기에 표시할 수 없습니다",
   "diff.filterConfigFailed": "Git 필터 설정을 완전히 읽지 못해 비교를 실행하지 않았습니다. Git 설정과 출력 제한을 확인한 후 다시 시도하세요.",
   "diff.viewInBrowser": "브라우저에서 보기",
-  "diff.noForkPoint": "이 브랜치의 분기점을 찾지 못했습니다. 다른 범위를 선택하세요",
+  "diff.noForkPoint": "이 브랜치의 분기점을 찾지 못했습니다. 다른 비교 기준을 선택하세요",
   "diff.empty": "변경 사항 없음",
   "diff.omitted": "추적되지 않는 파일 {count}개를 더 표시하지 않았습니다",
   "diff.stale": "로컬 브랜치에 푸시하지 않은 커밋이 {count}개 있습니다. 여기에 표시된 것은 변경 요청의 변경 사항입니다",
@@ -251,5 +251,18 @@
   "toast.expandFailed": "변경되지 않은 줄을 표시하지 못했습니다: {message}",
   "toast.expandStale": "변경 사항을 읽은 후 파일이 바뀌었습니다. 펼치기 전에 새로고침하세요",
   "toast.prompted": "전송됨: {text}",
-  "toast.promptFailed": "메시지를 보내지 못했습니다"
+  "toast.promptFailed": "메시지를 보내지 못했습니다",
+  "diff.base.aria": "기준 브랜치: {base}",
+  "diff.base.uncommitted": "커밋되지 않은 변경 사항 포함",
+  "diff.base.search": "브랜치 검색",
+  "diff.base.loading": "브랜치를 읽는 중…",
+  "diff.base.empty": "일치하는 브랜치 없음",
+  "diff.base.automatic": "기본값",
+  "diff.base.worktree": "워크트리 시작점",
+  "diff.base.remote": "원격 브랜치",
+  "diff.base.local": "로컬 브랜치",
+  "diff.base.note": "커밋되지 않은 변경 사항을 포함해 HEAD와 선택한 브랜치의 공통 조상과 비교",
+  "diff.baseMissing": "기준 브랜치 {base}를 찾지 못했습니다. 삭제되었을 수 있습니다",
+  "diff.baseUnrelated": "{base}와 HEAD에 공통 기록이 없습니다",
+  "diff.useAutomaticBase": "기본 기준 브랜치 사용"
 }

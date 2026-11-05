@@ -67,6 +67,14 @@ it('registers Korean, translates every namespace, coexists with core registratio
   expect(locale.bind('forgePanel')('review.range', { range: '12–14' })).toBe('12–14에 댓글 작성')
   expect(locale.bind('stats')('cache.detail', { read: 100, input: 20, write: 0 })).toBe('캐시 읽기 100 · 입력 20 · 캐시 쓰기 0')
   expect(locale.bind('liveshare')('dialog.sessionMode.view')).toBe('읽기 전용')
+  expect(locale.bind('common')('subtitle.expand', { name: '팀 작업' })).toBe('팀 작업 설명 펼치기')
+  expect(locale.bind('settings')('desktop.channel.title')).toBe('업데이트 채널')
+  expect(locale.bind('settings.webSearch')('providerMissing', { id: 'demo' })).toBe('demo (불러오지 않음)')
+  const search = locale.bind('settings.webSearch')
+  const pathHint = 'API 접두사를 포함한 주소를 입력하세요. 비워 두면 공식 주소를 사용합니다. 제공업체가 요청 경로를 자동으로 덧붙입니다.'
+  expect(search('baseUrlHint')).toBe(pathHint)
+  expect(search('baseUrlHint', { path: '/fetch' })).toBe(pathHint)
+
 
   let checked = 0
   for (const file of (await import('node:fs')).readdirSync(`${PACK}/dictionaries`)) {

@@ -1,7 +1,9 @@
 // Compare dictionaries/*.json against the English client dictionaries of a DeepSeek Harness checkout.
 // Usage (from this repo): <dsh-checkout>/node_modules/.bin/tsx --tsconfig <dsh-checkout>/tsconfig.base.json scripts/compare-upstream.mts <dsh-checkout>
 // The Harness tsconfig maps workspace imports to src; without it an unbuilt checkout fails on imports that resolve to lib/.
-// Reports namespaces and keys that are missing, extra, or that change {placeholders}, /commands or snake_case tokens.
+// Reports missing keys, unreviewed extra keys, and changed {placeholders}, /commands or snake_case tokens.
+// compatibility.json records the keys retained for the other supported revision and reviewed shared copy.
+import { compareDictionary, validateCompatibility } from './compatibility.mjs'
 import { execSync } from 'node:child_process'
 import { readFileSync, readdirSync } from 'node:fs'
 import { register } from 'node:module'
@@ -123,21 +125,23 @@ for (const rel of files) {
   }
 }
 
-const tokens = (text: string) => (text.match(/\{\w+\}|(?<![A-Za-z0-9/])\/[A-Za-z][\w-]*(?:=[\w-]+| (?:on|off))?|\b[a-z]+_[a-z_]+\b/gu) ?? []).sort().join(',')
+const compatibility = JSON.parse(readFileSync(`${here}compatibility.json`, 'utf8'))
 let checked = 0
+let retained = 0
 const ours = readdirSync(`${here}dictionaries`).filter(f => f.endsWith('.json')).map(f => f.slice(0, -5))
+const dictionaries: Record<string, Record<string, string>> = {}
 for (const ns of ours) {
   const ko = JSON.parse(readFileSync(`${here}dictionaries/${ns}.json`, 'utf8')) as Record<string, string>
+  dictionaries[ns] = ko
   const en = english[ns]?.dict
   if (!en) { problems.push(`${ns}: namespace is not registered by this Harness checkout`); continue }
-  for (const key of Object.keys(en)) if (!(key in ko)) problems.push(`${ns}: missing ${key} (en: ${JSON.stringify(en[key])})`)
-  for (const key of Object.keys(ko)) {
-    if (!(key in en)) { problems.push(`${ns}: extra ${key}`); continue }
-    checked++
-    if (tokens(ko[key]) !== tokens(en[key])) problems.push(`${ns}: ${key} changes tokens (en ${JSON.stringify(en[key])})`)
-  }
+  const result = compareDictionary(ns, ko, en, compatibility)
+  problems.push(...result.problems)
+  checked += result.checked
+  retained += result.retained
 }
+problems.push(...validateCompatibility(dictionaries, compatibility))
 for (const ns of Object.keys(english)) if (!ours.includes(ns)) problems.push(`${ns}: untranslated namespace (${english[ns].file}, ${Object.keys(english[ns].dict).length} keys)`)
 for (const problem of problems) console.log(problem)
-console.log(`${Object.keys(english).length} upstream namespaces, ${ours.length} translated, ${checked} keys checked, ${problems.length} problem(s)`)
+console.log(`${Object.keys(english).length} upstream namespaces, ${ours.length} translated, ${checked} live keys checked, ${retained} reviewed compatibility keys, ${problems.length} problem(s)`)
 process.exit(problems.length > 0 ? 1 : 0)

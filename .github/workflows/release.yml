@@ -26,6 +26,8 @@ jobs:
           fi
       - name: Dictionaries and client.js are consistent
         run: npm run check
+      - name: Compatibility validation tests
+        run: npm test
       - name: Pack
         id: pack
         run: echo "file=$(npm pack --silent)" >> "$GITHUB_OUTPUT"

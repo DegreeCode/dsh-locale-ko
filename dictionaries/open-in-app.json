@@ -56,5 +56,6 @@
   "menu.copied": "복사됨",
   "menu.copyFailed": "복사하지 못했습니다. 콘텐츠를 사용할 수 있는지 확인한 후 다시 시도하세요.",
   "path.opened": "다른 기기에서 열었습니다",
-  "path.revealed": "다른 기기에서 파일 위치를 표시했습니다"
+  "path.revealed": "다른 기기에서 파일 위치를 표시했습니다",
+  "menu.openIn": "다음에서 열기"
 }

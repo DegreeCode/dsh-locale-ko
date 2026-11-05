@@ -47,5 +47,8 @@
   "applicationsFailed": "앱 접근 정보를 불러오지 못했습니다: {message}",
   "iconsFailed": "앱 아이콘을 불러오지 못했습니다: {message}",
   "failed": "권한을 업데이트하지 못했습니다: {message}",
-  "queryFailed": "권한을 확인하지 못했습니다: {message}"
+  "queryFailed": "권한을 확인하지 못했습니다: {message}",
+  "approvalRisks": "위험",
+  "approvalRiskTitle": "컴퓨터 사용의 위험",
+  "approvalRiskNotice": "에이전트는 사용자가 승인한 앱에만 접근할 수 있으며, 백그라운드에서 해당 앱을 읽고 제어할 수 있습니다.\n\n온라인 게임, 메시지 앱 등은 자동화를 제한할 수 있습니다. 해당 규칙을 위반하면 앱 계정이 일시 정지되거나 영구 정지될 수 있습니다.\n\n이러한 위험을 감수하고 진행하세요. 자동 제어를 중지하려면 언제든 DeepSeek Harness에서 중지를 누르세요."
 }
