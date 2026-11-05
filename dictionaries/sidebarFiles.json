@@ -15,5 +15,9 @@
   "error.notFound": "해당 디렉터리가 없습니다. 이동되었거나 삭제되었을 수 있습니다.",
   "error.outsideWorkspace": "해당 디렉터리는 워크스페이스 밖에 있어 사이드바에서 읽지 않습니다.",
   "error.notDirectory": "디렉터리가 아닙니다.",
-  "error.unavailable": "읽지 못했습니다: {message}"
+  "error.unavailable": "읽지 못했습니다: {message}",
+  "entry.noViewer": "이 파일을 열 수 있는 뷰어가 없습니다.",
+  "navigator.show": "파일 트리 표시",
+  "navigator.hide": "파일 트리 숨기기",
+  "navigator.resize": "파일 트리 크기 조절"
 }

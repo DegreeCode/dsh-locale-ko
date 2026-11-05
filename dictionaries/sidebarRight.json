@@ -33,5 +33,8 @@
   "dock.drop.bottom": "아래쪽 분할 추가",
   "tab.guide.title": "시작",
   "tab.guide.more": "더 많은 도구",
-  "tab.unavailable": "아직 이 유형의 콘텐츠를 볼 수 있는 뷰어가 없습니다."
+  "tab.unavailable": "아직 이 유형의 콘텐츠를 볼 수 있는 뷰어가 없습니다.",
+  "menu.close": "닫기",
+  "menu.closeOthers": "다른 탭 닫기",
+  "menu.closeRight": "오른쪽 탭 닫기"
 }

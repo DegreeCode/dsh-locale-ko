@@ -54,6 +54,20 @@ it('registers Korean, translates every namespace, coexists with core registratio
   expect(locale.bind(SETTINGS_NS)('language.title')).toBe('언어')
   expect(locale.bind('goal')('action.save')).toBe(JSON.parse(readFileSync(`${PACK}/dictionaries/goal.json`, 'utf8'))['action.save'])
 
+  // Real schedule calls no longer supply a cron expression.
+  for (const namespace of ['schedule.catalog', 'schedule.manager']) {
+    const t = locale.bind(namespace)
+    expect(t('frequency.cron', { timeZone: 'Asia/Seoul' })).toBe('사용자 지정 (Asia/Seoul)')
+    expect(t('frequency.cronLocal')).toBe('사용자 지정')
+    expect(t('frequency.hostMonthly', { days: '31', time: '09:00' })).toBe('매월 31일 09:00, 해당 날짜가 없으면 말일')
+  }
+  expect(locale.bind('schedule.manager')('clear.action')).toBe('종료된 작업 모두 지우기')
+  expect(locale.bind('schedule.manager')('clear.description')).toContain('일시 중지된 작업')
+  expect(locale.bind('fileActions')('menu.copyImage')).toBe('이미지 복사')
+  expect(locale.bind('forgePanel')('review.range', { range: '12–14' })).toBe('12–14에 댓글 작성')
+  expect(locale.bind('stats')('cache.detail', { read: 100, input: 20, write: 0 })).toBe('캐시 읽기 100 · 입력 20 · 캐시 쓰기 0')
+  expect(locale.bind('liveshare')('dialog.sessionMode.view')).toBe('읽기 전용')
+
   let checked = 0
   for (const file of (await import('node:fs')).readdirSync(`${PACK}/dictionaries`)) {
     const namespace = file.slice(0, -5)
@@ -65,7 +79,7 @@ it('registers Korean, translates every namespace, coexists with core registratio
       checked++
     }
   }
-  expect(checked).toBeGreaterThan(2500)
+  expect(checked).toBeGreaterThan(3000)
 
   disposeGoal()
   await pack.dispose()

@@ -190,5 +190,12 @@
   "layout.toolsRemoved": "제거됨: {names}",
   "layout.toolsRemovedCount": "{count}개 제거됨",
   "layout.systemPromptAndToolsUpdated": "시스템 프롬프트 및 도구 업데이트됨",
-  "layout.compactionInterrupted": "압축이 완료되기 전에 중단되었습니다."
+  "layout.compactionInterrupted": "압축이 완료되기 전에 중단되었습니다.",
+  "toolbar.subCalls": "하위 호출",
+  "toolbar.expandSubCalls": "하위 호출 펼치기",
+  "toolbar.collapseSubCalls": "하위 호출 접기",
+  "record.rawResult": "원본 결과",
+  "record.renderedResult": "렌더링된 결과",
+  "record.rawResultUnavailable": "원본 결과는 실시간 도구 호출에서만 사용할 수 있습니다",
+  "request.collapsedTool": "하위 호출"
 }

@@ -43,5 +43,18 @@
   "app.finder": "Finder",
   "app.explorer": "파일 탐색기",
   "app.filemanager": "파일",
-  "app.terminal": "터미널"
+  "app.terminal": "터미널",
+  "menu.openInSidebar": "사이드바에서 열기",
+  "menu.openInFloat": "플로팅 패널에서 열기",
+  "menu.finder": "Finder에서 보기",
+  "menu.reveal": "폴더에서 보기",
+  "menu.defaultApp": "기본 앱에서 열기",
+  "menu.external": "외부 브라우저에서 열기",
+  "menu.copyLink": "링크 주소 복사",
+  "menu.copyPath": "파일 경로 복사",
+  "menu.copyDirectoryPath": "폴더 경로 복사",
+  "menu.copied": "복사됨",
+  "menu.copyFailed": "복사하지 못했습니다. 콘텐츠를 사용할 수 있는지 확인한 후 다시 시도하세요.",
+  "path.opened": "다른 기기에서 열었습니다",
+  "path.revealed": "다른 기기에서 파일 위치를 표시했습니다"
 }
